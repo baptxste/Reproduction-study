@@ -7,7 +7,7 @@ class CNN(nn.Module):
         super(CNN, self).__init__()
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-        self.conv = nn.Sequential(
+        self.model = nn.Sequential(
             nn.Conv2d(1, 10, kernel_size=3), #1
             nn.ReLU(),
             nn.Conv2d(10, 20, kernel_size=3), #2
@@ -19,26 +19,17 @@ class CNN(nn.Module):
             nn.ReLU(),
             nn.Conv2d(20, 20, kernel_size=3), #5
             nn.ReLU(),
-            nn.Conv2d(20, 20, kernel_size=3), #6
+            nn.Flatten(),
+            nn.Linear(6480, 4096),
             nn.ReLU(),
-            nn.Conv2d(20, 20, kernel_size=3), #7
+            nn.Linear(4096,512),
             nn.ReLU(),
-            nn.Conv2d(20, 20, kernel_size=3), #8
-            nn.ReLU()
-        )
-        self.classifier = nn.Sequential(
-            nn.Linear(2880, 512),
-            nn.ReLU(),
-            nn.Dropout(0.3),
-            nn.Linear(512, 10)
+            nn.Linear(512,10)
         )
 
     def forward(self, x):
         x = x.view(x.size(0), 1, 28, 28)
-        x = self.conv(x)
-        x = x.view(x.size(0), -1)
-        x = self.classifier(x)
-        return x
+        return self.model(x)
 
     def train_model(self, trainloader, test_loader, loss_fn, n_epochs, optimizer):
         self.to(self.device)
@@ -76,9 +67,10 @@ class CNN_cifar(nn.Module):
     def __init__(self):
         super(CNN_cifar, self).__init__()
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        print(f"using device {self.device}")
 
-        self.conv = nn.Sequential(
-            nn.Conv2d(3, 10, kernel_size=3), #1
+        self.model = nn.Sequential(
+            nn.Conv2d(3, 10, kernel_size=5), #1
             nn.ReLU(),
             nn.Conv2d(10, 20, kernel_size=3), #2
             nn.ReLU(),
@@ -89,26 +81,17 @@ class CNN_cifar(nn.Module):
             nn.ReLU(),
             nn.Conv2d(20, 20, kernel_size=3), #5
             nn.ReLU(),
-            nn.Conv2d(20, 20, kernel_size=3), #6
+            nn.Flatten(),
+            nn.Linear(8000,4096),
             nn.ReLU(),
-            nn.Conv2d(20, 20, kernel_size=3), #7
+            nn.Linear(4096,512),
             nn.ReLU(),
-            nn.Conv2d(20, 20, kernel_size=3), #8
-            nn.ReLU()
-        )
-        self.classifier = nn.Sequential(
-            nn.Linear(5120, 512),
-            nn.ReLU(),
-            nn.Dropout(0.3),
-            nn.Linear(512, 10)
+            nn.Linear(512,10)
         )
 
     def forward(self, x):
         x = x.view(x.size(0), 3, 32, 32)
-        x = self.conv(x)
-        x = x.view(x.size(0), -1)
-        x = self.classifier(x)
-        return x
+        return self.model(x)
 
     def train_model(self, trainloader, test_loader, loss_fn, n_epochs, optimizer):
         self.to(self.device)
