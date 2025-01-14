@@ -1,1 +1,86 @@
-{"1": {"model base": "A", "couche copiees": 1, "couche reentrainees": 8, "resultats": [77.16, 78.72, 78.04, 78.76, 79.06]}, "2": {"model base": "A", "couche copiees": 2, "couche reentrainees": 8, "resultats": [77.88, 79.1, 76.26, 76.08, 78.52]}, "3": {"model base": "A", "couche copiees": 3, "couche reentrainees": 8, "resultats": [80.28, 77.84, 77.24, 79.44, 79.38]}, "4": {"model base": "A", "couche copiees": 4, "couche reentrainees": 8, "resultats": [79.32, 80.02, 81.44, 78.44, 79.78]}, "5": {"model base": "A", "couche copiees": 5, "couche reentrainees": 8, "resultats": [80.42, 80.96, 79.08, 80.42, 79.28]}, "6": {"model base": "A", "couche copiees": 6, "couche reentrainees": 8, "resultats": [80.88, 80.06, 80.74, 81.46, 80.88]}, "7": {"model base": "A", "couche copiees": 7, "couche reentrainees": 8, "resultats": [80.04, 82.84, 81.74, 81.28, 82.28]}, "8": {"model base": "A", "couche copiees": 8, "couche reentrainees": 8, "resultats": [78.86, 81.56, 81.44, 80.84, 82.2]}}
+{
+    "1": {
+        "model base": "B",
+        "couche copiees": 1,
+        "couche reentrainees": 7,
+        "resultats": [
+            78.96,
+            80.7,
+            80.26,
+            81.94,
+            81.74
+        ]
+    },
+    "2": {
+        "model base": "B",
+        "couche copiees": 2,
+        "couche reentrainees": 6,
+        "resultats": [
+            79.98,
+            82.2,
+            81.62,
+            83.5,
+            83.92
+        ]
+    },
+    "3": {
+        "model base": "B",
+        "couche copiees": 3,
+        "couche reentrainees": 5,
+        "resultats": [
+            84.3,
+            83.82,
+            83.72,
+            83.6,
+            84.42
+        ]
+    },
+    "4": {
+        "model base": "B",
+        "couche copiees": 4,
+        "couche reentrainees": 4,
+        "resultats": [
+            84.7,
+            84.4,
+            85.68,
+            84.86,
+            85.4
+        ]
+    },
+    "5": {
+        "model base": "B",
+        "couche copiees": 5,
+        "couche reentrainees": 3,
+        "resultats": [
+            84.36,
+            83.62,
+            83.76,
+            84.96,
+            85.02
+        ]
+    },
+    "6": {
+        "model base": "B",
+        "couche copiees": 6,
+        "couche reentrainees": 2,
+        "resultats": [
+            85.36,
+            84.56,
+            83.82,
+            84.9,
+            81.24
+        ]
+    },
+    "7": {
+        "model base": "B",
+        "couche copiees": 7,
+        "couche reentrainees": 1,
+        "resultats": [
+            84.66,
+            83.28,
+            85.06,
+            84.12,
+            83.18
+        ]
+    }
+}
